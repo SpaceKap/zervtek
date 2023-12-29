@@ -52,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 $(".zervtek-hero-section").each(function (index) {
   let triggerElement = $(this);
-  let targetElement = $(".zervtek-logo-link");
+  let targetElement = $(".nav_logo");
 
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -134,11 +134,11 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
   }
 
- // $("[words-slide-up]").each(function (index) {
- //   let tl = gsap.timeline({ paused: true });
- //   tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
- //   createScrollTrigger($(this), tl);
- // });
+  $("[words-slide-up]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".word"), { opacity: 0, yPercent: 100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+    createScrollTrigger($(this), tl);
+  });
 
   $("[words-rotate-in]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
