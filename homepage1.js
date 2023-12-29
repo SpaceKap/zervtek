@@ -165,6 +165,18 @@ window.addEventListener("DOMContentLoaded", (event) => {
     tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
   });
 
+   $("[scrub-each-word2]").each(function (index) {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: $(this),
+        start: "top 60%",
+        end: "bottom center",
+        scrub: true
+      }
+    });
+    tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
+  });
+
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
