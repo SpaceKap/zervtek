@@ -45,10 +45,6 @@
       0
     );
     
-</script>
-
-<script>
-
 
 // Animate Pricing Text From To
 $(".header_text-move").each(function (index) {
@@ -87,13 +83,6 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-</script>
-
-
-
-
-
-<script>
 window.addEventListener("DOMContentLoaded", (event) => {
   // Split text into spans
   let typeSplit = new SplitType("[text-split]", {
@@ -179,12 +168,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
-</script>
 
 
-
-
-<script>
   $(function() {
 
     let slideTotal = $("[data-swiper=lectures] .swiper-slide").length;
@@ -219,13 +204,9 @@ window.addEventListener("DOMContentLoaded", (event) => {
     });
 
   });     
-</script>
-
 
 
 //Contact form 
-
-<script>
 // Script to combine phone parts into 'Full phone'
 
 $(function() {
@@ -249,10 +230,9 @@ $(function() {
   
 });
 
-</script>
 
 <!-- Intl-tel-input -->
-<script>
+
 var input = document.querySelector("#phone"),
 	dialCode = document.querySelector(".dialCode"),
  	errorMsg = document.querySelector("#error-msg"),
@@ -296,7 +276,7 @@ input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
 </script>
 
-<script>
+
   document.addEventListener('DOMContentLoaded', function() {
     // Ensure GSAP and ScrollTrigger are available
     if (gsap && ScrollTrigger) {
