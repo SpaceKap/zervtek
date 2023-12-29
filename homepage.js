@@ -45,6 +45,48 @@
       0
     );
     
+// Logo Scale
+$(".zervtek-hero-section .zervtek-hero-background").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(".zervtek-logo-link");
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "top top",
+      end: "bottom top",
+      scrub: 1
+    }
+  });
+  tl.from(targetElement, {
+    y: "-90%",
+    width: "100%",
+    duration: 1
+  });
+});
+
+// Header Text Hide
+$(".header_text-move").each(function (index) {
+  let triggerElement = $(this);
+  let targetElement = $(this);
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: triggerElement,
+      // trigger element - viewport
+      start: "-100% top",
+      end: "30% top",
+      scrub: 0.8
+    }
+  });
+  tl.to(targetElement, {
+    y: "100%",
+    duration: 1
+  });
+});
+
+
 
 // Animate Pricing Text From To
 $(".header_text-move").each(function (index) {
