@@ -274,7 +274,7 @@ input.addEventListener('blur', function() {
 
 input.addEventListener('change', reset);
 input.addEventListener('keyup', reset);
-</script>
+
 
 
   document.addEventListener('DOMContentLoaded', function() {
