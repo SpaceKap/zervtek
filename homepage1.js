@@ -44,31 +44,6 @@
       },
       0
     );
-    
-// Logo Scale
-
-gsap.registerPlugin(ScrollTrigger);
-
-
-$(".zervtek-hero-section").each(function (index) {
-  let triggerElement = $(this);
-  let targetElement = $(".nav_logo");
-
-  let tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: triggerElement,
-      // trigger element - viewport
-      start: "top top",
-      end: "bottom top",
-      scrub: 1
-    }
-  });
-  tl.from(targetElement, {
-    y: "-90%",
-    width: "100%",
-    duration: 1
-  });
-});
 
 
 // Animate Pricing Text From To
