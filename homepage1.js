@@ -1,4 +1,4 @@
-  // page load animation
+ // page load animation
   let homeLoadTl = gsap.timeline();
 
   homeLoadTl
