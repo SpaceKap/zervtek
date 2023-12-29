@@ -171,7 +171,8 @@ window.addEventListener("DOMContentLoaded", (event) => {
         trigger: $(this),
         start: "top 60%",
         end: "bottom center",
-        scrub: true
+        scrub: true,
+	markers: true
       }
     });
     tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
