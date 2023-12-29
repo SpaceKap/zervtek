@@ -170,7 +170,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
       scrollTrigger: {
         trigger: $(this),
         start: "top 60%",
-        end: "bottom top",
+        end: "bottom 30%",
         scrub: true,
 	markers: true
       }
