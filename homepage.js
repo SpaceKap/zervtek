@@ -49,11 +49,8 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
-ScrollTrigger.defaults({
-  markers: false
-});
 
-$(".zervtek-hero-section.zervtek-hero-background").each(function (index) {
+$(".zervtek-hero-section").each(function (index) {
   let triggerElement = $(this);
   let targetElement = $(".zervtek-logo-link");
 
