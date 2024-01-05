@@ -209,15 +209,15 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //Contact form 
 // Script to combine phone parts into 'Full phone'
 
-const dropdownContainer = document.querySelector('.form-telephone');
+const specialContainer = document.getElementById('zervtek-contact-form');
 
-// Disable Lenis smooth scrolling when any element in the container gains focus
-dropdownContainer.addEventListener('focusin', () => {
+// Disable Lenis smooth scrolling when entering the container
+specialContainer.addEventListener('mouseenter', () => {
     lenis.destroy(); // This disables Lenis
 });
 
-// Re-enable Lenis smooth scrolling when focus is lost
-dropdownContainer.addEventListener('focusout', () => {
+// Re-enable Lenis smooth scrolling when leaving the container
+specialContainer.addEventListener('mouseleave', () => {
     lenis.init(); // This re-initializes Lenis
     requestAnimationFrame(raf);
 });
