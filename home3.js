@@ -175,7 +175,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: $(this),
-        start: "bottom 80%",
+        start: "bottom 60%",
         end: "top 10%",
         scrub: true
       }
