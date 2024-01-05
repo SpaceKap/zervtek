@@ -209,6 +209,20 @@ window.addEventListener("DOMContentLoaded", (event) => {
 //Contact form 
 // Script to combine phone parts into 'Full phone'
 
+const dropdownContainer = document.querySelector('.form-telephone');
+
+// Disable Lenis smooth scrolling when any element in the container gains focus
+dropdownContainer.addEventListener('focusin', () => {
+    lenis.destroy(); // This disables Lenis
+});
+
+// Re-enable Lenis smooth scrolling when focus is lost
+dropdownContainer.addEventListener('focusout', () => {
+    lenis.init(); // This re-initializes Lenis
+    requestAnimationFrame(raf);
+});
+
+
 $(function() {
   
   // Trigger when the form is submitted
