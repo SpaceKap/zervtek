@@ -128,6 +128,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
+  $("[words-slide-from-left]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".word"), { opacity: 0, x: "-1em", duration: 0.6, ease: "power2.out", stagger: { amount: 0.2 } });
+    createScrollTrigger($(this), tl);
+  });
+
   $("[letters-slide-up]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { yPercent: 100, duration: 0.2, ease: "power1.out", stagger: { amount: 0.6 } });
