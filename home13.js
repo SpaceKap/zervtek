@@ -38,9 +38,9 @@
     .from(
       ".zervtek-hero-background",
       {
-        scale: 1.5,
+        scale: 1.3,
         ease: "power1.inOut",
-        duration: 2.5
+        duration: 1.5
       },
       0
     );
