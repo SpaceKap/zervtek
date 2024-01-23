@@ -140,13 +140,45 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
-  $("[letters-slide-down]").each(function (index) {
+$("[letters-slide-down]").each(function (index) {
+  let tl = gsap.timeline({
+    paused: true,
+    scrollTrigger: {
+      trigger: $(this),
+      start: "top 80%", // Adjust these values as needed
+      end: "bottom center", // Adjust these values as needed
+      // Other ScrollTrigger properties can be included here if needed
+    }
+  });
+
+  tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
+
+  // Assuming createScrollTrigger sets up additional configurations
+  createScrollTrigger($(this), tl);
+});
+
+
+  $("[letters-slide-down99]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
     createScrollTrigger($(this), tl);
   });
 
-  $("[letters-fade-in]").each(function (index) {
+$("[letters-fade-in]").each(function (index) {
+    let tl = gsap.timeline({
+        paused: true,
+        scrollTrigger: {
+            trigger: $(this),
+            start: "top 80%", // Example: when the top of the element hits the bottom of the viewport
+            end: "center center", // Example: when the bottom of the element passes the top of the viewport
+            scrub: true // Optional: Smooth scrubbing effect when scrolling
+        }
+    });
+
+    tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
+});
+
+  $("[letters-fade-in99]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
     createScrollTrigger($(this), tl);
@@ -186,6 +218,42 @@ window.addEventListener("DOMContentLoaded", (event) => {
   // Avoid flash of unstyled content
   gsap.set("[text-split]", { opacity: 1 });
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray("[data-animate-icon]").forEach(function(icon) {
+    gsap.fromTo(icon, 
+      {
+        scale: 0.5,
+        opacity: 0
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: icon,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: true // Remove this line in production, it's just for debugging
+        }
+      }
+    );
+  });
+});
+
+
+
+
+
+
+
+
+
 
 
 
