@@ -207,8 +207,8 @@ $("[letters-fade-in]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
         trigger: $(this),
-        start: "bottom 60%",
-        end: "top 10%",
+        start: "top 80%",
+        end: "top 40%",
         scrub: true
       }
     });
