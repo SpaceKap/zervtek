@@ -171,6 +171,24 @@ $("[letters-slide-down]").each(function (index) {
     createScrollTrigger($(this), tl);
   });
 
+// Targeting elements with the 'data-slide-from-left' attribute
+$("[data-slide-from-left]").each(function() {
+    // GSAP animation for each matched element
+    gsap.from(this, {
+        x: -500, // Start from -500px on the X-axis (left side)
+        opacity: 0, // Start from fully transparent
+        duration: 1, // Duration of the animation
+        ease: "power2.out", // Easing function
+        scrollTrigger: {
+            trigger: this,
+            start: "top 75%", // Start when the top of the element hits 75% of the viewport height
+            end: "bottom top", // End when the bottom of the element passes the top of the viewport
+            toggleActions: "play none none none"
+        }
+    });
+});
+
+
 $("[letters-fade-in]").each(function (index) {
     let tl = gsap.timeline({
         paused: true,
