@@ -140,7 +140,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
-  $("[letters-slide-down]").each(function (index) {
+$("[letters-slide-down]").each(function (index) {
+  let tl = gsap.timeline({
+    paused: true,
+    scrollTrigger: {
+      trigger: $(this),
+      start: "top 80%", // Adjust these values as needed
+      end: "bottom center", // Adjust these values as needed
+      // Other ScrollTrigger properties can be included here if needed
+    }
+  });
+
+  tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
+
+  // Assuming createScrollTrigger sets up additional configurations
+  createScrollTrigger($(this), tl);
+});
+
+
+  $("[letters-slide-down99]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { yPercent: -120, duration: 0.3, ease: "power1.out", stagger: { amount: 0.7 } });
     createScrollTrigger($(this), tl);
