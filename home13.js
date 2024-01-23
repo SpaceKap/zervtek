@@ -177,7 +177,7 @@ $("[data-slide-from-left]").each(function() {
     gsap.from(this, {
         x: -500, // Start from -500px on the X-axis (left side)
         opacity: 0, // Start from fully transparent
-        duration: 1, // Duration of the animation
+        duration: 2, // Duration of the animation
         ease: "power2.out", // Easing function
         scrollTrigger: {
             trigger: this,
