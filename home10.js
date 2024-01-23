@@ -210,6 +210,21 @@ $("[letters-fade-in]").each(function (index) {
     tl.from($(this).find(".word"), { opacity: 0.2, duration: 0.2, ease: "power1.out", stagger: { each: 0.4 } });
   });
 
+$("[data-slide-up]").each(function () {
+    let tl = gsap.timeline({ paused: true });
+    // Animate the entire sentence
+    tl.from(this, { opacity: 0, y: 50, duration: 0.5, ease: "back.out(1.7)" });
+    createScrollTrigger($(this), tl);
+});
+
+$("[data-slide-down]").each(function () {
+    let tl = gsap.timeline({ paused: true });
+    // Animate the entire sentence to slide down
+    tl.from(this, { opacity: 0, y: -50, duration: 0.5, ease: "back.out(1.7)" });
+    createScrollTrigger($(this), tl);
+});
+
+
    $("[scrub-each-word2]").each(function (index) {
     let tl = gsap.timeline({
       scrollTrigger: {
