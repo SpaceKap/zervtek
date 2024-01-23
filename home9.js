@@ -115,6 +115,13 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
+$("[words-slide-down]").each(function (index) {
+    let tl = gsap.timeline({ paused: true });
+    tl.from($(this).find(".word"), { opacity: 0, yPercent: -100, duration: 0.5, ease: "back.out(2)", stagger: { amount: 0.5 } });
+    createScrollTrigger($(this), tl);
+});
+
+
   $("[words-rotate-in]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.set($(this).find(".word"), { transformPerspective: 1000 });
@@ -208,7 +215,7 @@ $("[letters-fade-in]").each(function (index) {
       scrollTrigger: {
         trigger: $(this),
         start: "top 80%",
-        end: "top 40%",
+        end: "top center",
         scrub: true
       }
     });
