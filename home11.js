@@ -212,16 +212,23 @@ $("[letters-fade-in]").each(function (index) {
 
 $("[data-slide-up]").each(function () {
     let tl = gsap.timeline({ paused: true });
-    // Animate the entire sentence
     tl.from(this, { opacity: 0, y: 50, duration: 0.5, ease: "back.out(1.7)" });
-    createScrollTrigger($(this), tl);
+
+    createScrollTrigger($(this), tl, {
+        start: "top bottom", // Animation starts when the top of the element hits the bottom of the viewport
+        end: "bottom 80%"    // Animation ends when the bottom of the element passes the top of the viewport
+    });
 });
+
 
 $("[data-slide-down]").each(function () {
     let tl = gsap.timeline({ paused: true });
-    // Animate the entire sentence to slide down
     tl.from(this, { opacity: 0, y: -50, duration: 0.5, ease: "back.out(1.7)" });
-    createScrollTrigger($(this), tl);
+
+    createScrollTrigger($(this), tl, {
+        start: "top bottom", // Animation starts when the top of the element hits the bottom of the viewport
+        end: "bottom 80%"    // Animation ends when the bottom of the element passes the top of the viewport
+    });
 });
 
 
