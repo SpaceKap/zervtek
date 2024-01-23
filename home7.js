@@ -220,6 +220,42 @@ $("[letters-fade-in]").each(function (index) {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray("[data-animate-icon]").forEach(function(icon) {
+    gsap.fromTo(icon, 
+      {
+        scale: 0.5,
+        opacity: 0
+      },
+      {
+        scale: 1,
+        opacity: 1,
+        duration: 1,
+        ease: "power1.out",
+        scrollTrigger: {
+          trigger: icon,
+          start: "top 80%",
+          end: "bottom 20%",
+          toggleActions: "play none none reverse",
+          markers: true // Remove this line in production, it's just for debugging
+        }
+      }
+    );
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 //Contact form 
 // Script to combine phone parts into 'Full phone'
