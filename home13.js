@@ -196,7 +196,8 @@ $("[letters-fade-in]").each(function (index) {
             trigger: $(this),
             start: "top 80%", // Example: when the top of the element hits the bottom of the viewport
             end: "center center", // Example: when the bottom of the element passes the top of the viewport
-            scrub: true // Optional: Smooth scrubbing effect when scrolling
+            scrub: true, // Optional: Smooth scrubbing effect when scrolling
+            toggleActions: "play none none none" 
         }
     });
 
