@@ -146,11 +146,25 @@ window.addEventListener("DOMContentLoaded", (event) => {
     createScrollTrigger($(this), tl);
   });
 
-  $("[letters-fade-in]").each(function (index) {
+  $("[letters-fade-in1]").each(function (index) {
     let tl = gsap.timeline({ paused: true });
     tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
     createScrollTrigger($(this), tl);
   });
+
+$("[letters-fade-in]").each(function (index) {
+    let tl = gsap.timeline({
+        paused: true,
+        scrollTrigger: {
+            trigger: $(this),
+            start: "top 70%", // Example: when the top of the element hits the bottom of the viewport
+            end: "bottom top", // Example: when the bottom of the element passes the top of the viewport
+            scrub: true // Optional: Smooth scrubbing effect when scrolling
+        }
+    });
+
+    tl.from($(this).find(".char"), { opacity: 0, duration: 0.2, ease: "power1.out", stagger: { amount: 0.8 } });
+});
 
 
   $("[letters-fade-in-random]").each(function (index) {
